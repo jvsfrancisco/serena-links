@@ -10,7 +10,7 @@ document.querySelector('#app').innerHTML = `
           <p class="brand-subtitle">B I Q U Í N I S</p>
         </div>
       </div>
-      <p class="bio">Moda praia com elegância e conforto. ☀️🌊</p>
+      <p class="bio">Biquínis para brilhar em qualquer verão. ☀️🌊</p>
     </header>
 
     <div class="links">
