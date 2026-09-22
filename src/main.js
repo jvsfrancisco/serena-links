@@ -6,76 +6,90 @@ const whatsappUrl = `https://api.whatsapp.com/send/?phone=5521988404868&text=${e
 
 document.querySelector('#app').innerHTML = `
   <main class="page">
-    <div class="ambient" aria-hidden="true"></div>
-
-    <div class="experience">
-      <section class="film" aria-label="Praia da Serena">
-        <video
-          class="film-video"
-          src="/videos/beach-pdv.mp4"
-          poster="/photos/beach.webp"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          aria-hidden="true"
-        ></video>
-        <div class="film-shade" aria-hidden="true"></div>
-        <div class="film-top">
-          <span class="film-label">Serena Biquínis</span>
-          <button class="share-button" id="shareButton" type="button" aria-label="Compartilhar página">
+    <div class="shell">
+      <header class="site-header">
+        <a class="brand" href="#inicio" aria-label="Serena Biquínis — início">
+          <img src="/photos/serena.png" alt="Serena Biquínis" />
+        </a>
+        <div class="header-side">
+          <span>Moda praia • Rio de Janeiro</span>
+          <button id="shareButton" class="share-button" type="button" aria-label="Compartilhar página">
             <i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>
           </button>
         </div>
-        <p class="film-caption"><span class="caption-line"></span> O seu lugar ao sol</p>
+      </header>
+
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> O universo Serena</p>
+            <h1 id="hero-title">Vista o <em>verão.</em></h1>
+          </div>
+          <p class="hero-intro">Biquínis para viver o sol do seu jeito. Escolha por onde começar.</p>
+        </div>
+
+        <div class="film">
+          <video
+            class="film-video"
+            src="/videos/beach-pdv.mp4"
+            poster="/photos/beach.webp"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-hidden="true"
+          ></video>
+          <div class="film-shade" aria-hidden="true"></div>
+          <span class="film-note">Um pedacinho do nosso verão <i class="fa-solid fa-sun" aria-hidden="true"></i></span>
+        </div>
       </section>
 
-      <section class="content" aria-labelledby="page-title">
-        <header class="intro">
-          <div class="brand-chip">
-            <span class="brand-symbol" aria-hidden="true">
-              <img src="/photos/serena.png" alt="" />
+      <section class="destinations" aria-labelledby="destinations-title">
+        <div class="section-heading">
+          <h2 id="destinations-title">Encontre seu caminho.</h2>
+          <span>01 — 04</span>
+        </div>
+
+        <nav class="actions" aria-label="Links da Serena">
+          <a class="action action-primary" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer">
+            <span class="action-number">01 / COMPRE COM A GENTE</span>
+            <span class="primary-copy">
+              <strong>Seu próximo biquíni começa aqui.</strong>
+              <small>Fale com a Serena e encontre modelo, cor e tamanho.</small>
             </span>
-            <span>Serena Biquínis</span>
-          </div>
-          <h1 id="page-title">O verão é <em>seu.</em></h1>
-          <p class="lead">Encontre seu próximo biquíni e aproveite cada dia de sol do seu jeito.</p>
-        </header>
-
-        <nav class="links" aria-label="Links da Serena">
-          <a class="primary-link" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-            <span>Escolher meu biquíni</span>
-            <i class="fa-solid fa-arrow-right arrow" aria-hidden="true"></i>
+            <span class="primary-foot">
+              <span><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Abrir WhatsApp</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </span>
           </a>
 
-          <a class="link-card" href="https://share.google/tF9dgYj1NQwDSUoFP" target="_blank" rel="noopener noreferrer">
-            <span class="link-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
-            <span class="link-copy"><strong>Visitar a loja</strong><small>Venha conhecer a Serena no Rio</small></span>
-            <i class="fa-solid fa-arrow-up-right-from-square link-out" aria-hidden="true"></i>
+          <a class="action action-store" href="https://share.google/tF9dgYj1NQwDSUoFP" target="_blank" rel="noopener noreferrer">
+            <span class="action-number">02 / VENHA NOS VER</span>
+            <span class="secondary-copy">
+              <strong>Visite a loja.</strong>
+              <small>Experimente a Serena de perto, no Rio.</small>
+            </span>
+            <span class="action-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
           </a>
 
-          <a class="link-card" href="https://www.instagram.com/serena_biquiniis/" target="_blank" rel="noopener noreferrer">
-            <span class="link-icon"><i class="fa-brands fa-instagram" aria-hidden="true"></i></span>
-            <span class="link-copy"><strong>Instagram</strong><small>Novidades, looks e inspiração</small></span>
-            <i class="fa-solid fa-arrow-up-right-from-square link-out" aria-hidden="true"></i>
+          <a class="action action-social" href="https://www.instagram.com/serena_biquiniis/" target="_blank" rel="noopener noreferrer">
+            <span class="action-number">03 / INSPIRE-SE</span>
+            <span class="social-line"><i class="fa-brands fa-instagram" aria-hidden="true"></i><strong>Instagram</strong><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
           </a>
 
-          <a class="link-card" href="https://www.tiktok.com/@serenabiquiniis01" target="_blank" rel="noopener noreferrer">
-            <span class="link-icon"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></span>
-            <span class="link-copy"><strong>TikTok</strong><small>Bastidores e combinações</small></span>
-            <i class="fa-solid fa-arrow-up-right-from-square link-out" aria-hidden="true"></i>
+          <a class="action action-social" href="https://www.tiktok.com/@serenabiquiniis01" target="_blank" rel="noopener noreferrer">
+            <span class="action-number">04 / ACOMPANHE</span>
+            <span class="social-line"><i class="fa-brands fa-tiktok" aria-hidden="true"></i><strong>TikTok</strong><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
           </a>
         </nav>
-
-        <footer class="footer">
-          <span>Serena Biquínis © ${new Date().getFullYear()}</span>
-          <span>Feita para viver o sol.</span>
-        </footer>
       </section>
-    </div>
 
+      <footer class="footer">
+        <span>Serena Biquínis © ${new Date().getFullYear()}</span>
+        <span>Feita para viver o sol.</span>
+      </footer>
+    </div>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </main>
 `
