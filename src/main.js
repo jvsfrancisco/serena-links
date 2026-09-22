@@ -4,163 +4,113 @@ const whatsappUrl = `https://api.whatsapp.com/send/?phone=5521988404868&text=${e
   'Olá, Serena! Vim pelo link da bio e quero conhecer os modelos disponíveis ☀️'
 )}`
 
-const app = document.querySelector('#app')
+document.querySelector('#app').innerHTML = `
+  <main class="page">
+    <div class="ambient" aria-hidden="true"></div>
 
-app.innerHTML = `
-  <main class="site-shell">
-    <section class="hero" aria-labelledby="hero-title">
-      <video class="hero-media" autoplay muted loop playsinline poster="/photos/beach.webp" aria-hidden="true">
-        <source src="/videos/hero.webm" type="video/webm" />
-        <source src="/videos/hero.mp4" type="video/mp4" />
-      </video>
-      <div class="hero-wash" aria-hidden="true"></div>
+    <div class="experience">
+      <section class="film" aria-label="Praia da Serena">
+        <video
+          class="film-video"
+          src="/videos/beach-pdv.mp4"
+          poster="/photos/beach.webp"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-hidden="true"
+        ></video>
+        <div class="film-shade" aria-hidden="true"></div>
+        <div class="film-top">
+          <span class="film-label">Serena Biquínis</span>
+          <button class="share-button" id="shareButton" type="button" aria-label="Compartilhar página">
+            <i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>
+          </button>
+        </div>
+        <p class="film-caption"><span class="caption-line"></span> O seu lugar ao sol</p>
+      </section>
 
-      <header class="hero-header">
-        <img class="brand" src="/photos/serena-light.svg" alt="Serena Biquínis" />
-        <button class="round-button" id="shareButton" type="button" aria-label="Compartilhar página">
-          <i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>
-        </button>
-      </header>
+      <section class="content" aria-labelledby="page-title">
+        <header class="intro">
+          <div class="brand-chip">
+            <span class="brand-symbol" aria-hidden="true">
+              <img src="/photos/serena.png" alt="" />
+            </span>
+            <span>Serena Biquínis</span>
+          </div>
+          <h1 id="page-title">O verão é <em>seu.</em></h1>
+          <p class="lead">Encontre seu próximo biquíni e aproveite cada dia de sol do seu jeito.</p>
+        </header>
 
-      <div class="hero-copy">
-        <p class="eyebrow"><span></span> Moda praia feita no Rio</p>
-        <h1 id="hero-title">Seu verão<br /><em>começa aqui.</em></h1>
-        <p class="hero-note">Biquínis que vestem conforto, confiança e dias de sol.</p>
-        <a class="hero-cta" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer">
-          <span>Descobrir meu Serena</span>
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </div>
-
-      <button class="sound-toggle" id="soundToggle" type="button" aria-label="Ativar som do vídeo">
-        <i class="fa-solid fa-volume-xmark" aria-hidden="true"></i>
-        <span>som</span>
-      </button>
-    </section>
-
-    <section class="content" aria-label="Links da Serena">
-      <div class="intro-row reveal">
-        <p>Escolha como encontrar<br />o seu próximo favorito.</p>
-        <span>01 — 04</span>
-      </div>
-
-      <nav class="link-list" aria-label="Links principais">
-        <a class="feature-link reveal" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer">
-          <span class="link-index">01</span>
-          <span class="link-copy">
-            <strong>Comprar pelo WhatsApp</strong>
-            <small>Atendimento próximo para escolher modelo e tamanho</small>
-          </span>
-          <span class="link-arrow" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></span>
-        </a>
-
-        <a class="feature-link store-link reveal" href="https://share.google/tF9dgYj1NQwDSUoFP" target="_blank" rel="noopener noreferrer">
-          <span class="link-index">02</span>
-          <span class="link-copy">
-            <strong>Visitar a loja</strong>
-            <small>Venha experimentar a Serena no Rio de Janeiro</small>
-          </span>
-          <span class="link-arrow" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
-        </a>
-
-        <a class="feature-link reveal" href="https://www.instagram.com/serena_biquiniis/" target="_blank" rel="noopener noreferrer">
-          <span class="link-index">03</span>
-          <span class="link-copy">
-            <strong>Ver no Instagram</strong>
-            <small>Lançamentos, provador e inspiração para o verão</small>
-          </span>
-          <span class="link-arrow" aria-hidden="true"><i class="fa-brands fa-instagram"></i></span>
-        </a>
-
-        <a class="feature-link reveal" href="https://www.tiktok.com/@serenabiquiniis01" target="_blank" rel="noopener noreferrer">
-          <span class="link-index">04</span>
-          <span class="link-copy">
-            <strong>Acompanhar no TikTok</strong>
-            <small>Bastidores, combinações e novidades da Serena</small>
-          </span>
-          <span class="link-arrow" aria-hidden="true"><i class="fa-brands fa-tiktok"></i></span>
-        </a>
-      </nav>
-
-      <aside class="store-card reveal">
-        <div class="store-photo" role="img" aria-label="Clima de praia da Serena"></div>
-        <div class="store-info">
-          <p class="eyebrow dark"><span></span> Experiência Serena</p>
-          <h2>Do feed<br />para o provador.</h2>
-          <p>Veja de perto as cores, sinta os tecidos e encontre a modelagem que é a sua cara.</p>
-          <a href="https://share.google/tF9dgYj1NQwDSUoFP" target="_blank" rel="noopener noreferrer">
-            Como chegar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        <nav class="links" aria-label="Links da Serena">
+          <a class="primary-link" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            <span>Escolher meu biquíni</span>
+            <i class="fa-solid fa-arrow-right arrow" aria-hidden="true"></i>
           </a>
-        </div>
-      </aside>
 
-      <footer class="footer reveal">
-        <img src="/photos/serena.png" alt="" aria-hidden="true" />
-        <div>
-          <strong>Serena Biquínis</strong>
-          <span>Feito com sol no Rio de Janeiro</span>
-        </div>
-        <a href="https://www.instagram.com/serena_biquiniis/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Serena">
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-        </a>
-      </footer>
-    </section>
+          <a class="link-card" href="https://share.google/tF9dgYj1NQwDSUoFP" target="_blank" rel="noopener noreferrer">
+            <span class="link-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+            <span class="link-copy"><strong>Visitar a loja</strong><small>Venha conhecer a Serena no Rio</small></span>
+            <i class="fa-solid fa-arrow-up-right-from-square link-out" aria-hidden="true"></i>
+          </a>
+
+          <a class="link-card" href="https://www.instagram.com/serena_biquiniis/" target="_blank" rel="noopener noreferrer">
+            <span class="link-icon"><i class="fa-brands fa-instagram" aria-hidden="true"></i></span>
+            <span class="link-copy"><strong>Instagram</strong><small>Novidades, looks e inspiração</small></span>
+            <i class="fa-solid fa-arrow-up-right-from-square link-out" aria-hidden="true"></i>
+          </a>
+
+          <a class="link-card" href="https://www.tiktok.com/@serenabiquiniis01" target="_blank" rel="noopener noreferrer">
+            <span class="link-icon"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></span>
+            <span class="link-copy"><strong>TikTok</strong><small>Bastidores e combinações</small></span>
+            <i class="fa-solid fa-arrow-up-right-from-square link-out" aria-hidden="true"></i>
+          </a>
+        </nav>
+
+        <footer class="footer">
+          <span>Serena Biquínis © ${new Date().getFullYear()}</span>
+          <span>Feita para viver o sol.</span>
+        </footer>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </main>
-
-  <div class="toast" id="toast" role="status" aria-live="polite">Link copiado ☀️</div>
 `
 
-const video = document.querySelector('.hero-media')
-const soundToggle = document.querySelector('#soundToggle')
-const soundIcon = soundToggle.querySelector('i')
-
-soundToggle.addEventListener('click', () => {
-  video.muted = !video.muted
-  soundIcon.className = video.muted ? 'fa-solid fa-volume-xmark' : 'fa-solid fa-volume-high'
-  soundToggle.querySelector('span').textContent = video.muted ? 'som' : 'mudo'
-  soundToggle.setAttribute('aria-label', video.muted ? 'Ativar som do vídeo' : 'Desativar som do vídeo')
-})
+const video = document.querySelector('.film-video')
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  video.pause()
+}
 
 const toast = document.querySelector('#toast')
 let toastTimeout
 
-document.querySelector('#shareButton').addEventListener('click', async () => {
-  const shareData = {
-    title: 'Serena Biquínis',
-    text: 'Conheça a Serena Biquínis',
-    url: window.location.href,
-  }
+function showToast(message) {
+  toast.textContent = message
+  toast.classList.add('show')
+  clearTimeout(toastTimeout)
+  toastTimeout = setTimeout(() => toast.classList.remove('show'), 2600)
+}
 
+document.querySelector('#shareButton').addEventListener('click', async () => {
   try {
     if (navigator.share) {
-      await navigator.share(shareData)
+      await navigator.share({
+        title: 'Serena Biquínis',
+        text: 'Conheça a Serena Biquínis',
+        url: window.location.href,
+      })
       return
     }
 
     await navigator.clipboard.writeText(window.location.href)
-    toast.classList.add('show')
-    clearTimeout(toastTimeout)
-    toastTimeout = setTimeout(() => toast.classList.remove('show'), 2200)
+    showToast('Link copiado ☀️')
   } catch (error) {
     if (error?.name !== 'AbortError') {
-      toast.textContent = 'Copie o endereço do navegador para compartilhar'
-      toast.classList.add('show')
-      clearTimeout(toastTimeout)
-      toastTimeout = setTimeout(() => toast.classList.remove('show'), 2600)
+      showToast('Copie o endereço do navegador para compartilhar')
     }
   }
 })
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible')
-        observer.unobserve(entry.target)
-      }
-    })
-  },
-  { threshold: 0.12 }
-)
-
-document.querySelectorAll('.reveal').forEach((element) => observer.observe(element))
