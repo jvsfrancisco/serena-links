@@ -114,27 +114,46 @@ button { font: inherit; }
 }
 .film {
   position: relative;
-  height: clamp(210px, 23vw, 250px);
+  height: clamp(280px, 29vw, 320px);
   overflow: hidden;
   border-radius: 22px;
-  background: #56948f url('/photos/beach.webp') center 52% / cover;
+  background: #315d61;
+}
+.film::before {
+  position: absolute;
+  inset: -24px;
+  background: url('/photos/beach.webp') center 55% / cover;
+  filter: blur(18px) brightness(.78);
+  content: '';
+}
+.film-window {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #497979 url('/photos/beach.webp') center / cover;
+  box-shadow: 0 0 45px rgb(9 43 44 / .3);
+  transform: translateX(-50%);
 }
 .film-video {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: 50% 52%;
+  display: block;
+  object-fit: contain;
 }
 .film-shade {
   position: absolute;
+  z-index: 2;
   inset: 0;
-  background: linear-gradient(180deg, transparent 58%, rgb(10 40 44 / .38));
+  background: linear-gradient(90deg, rgb(10 40 44 / .23), transparent 36%, transparent 64%, rgb(10 40 44 / .23));
   pointer-events: none;
 }
 .film-note {
   position: absolute;
+  z-index: 3;
   bottom: 18px;
   left: 20px;
   display: inline-flex;
@@ -175,7 +194,7 @@ button { font: inherit; }
 .actions {
   display: grid;
   grid-template-columns: 1.15fr .5fr .5fr;
-  grid-template-rows: 104px 104px;
+  grid-template-rows: 124px 104px;
   gap: 12px;
 }
 .action {
@@ -232,19 +251,35 @@ button { font: inherit; }
   font-weight: 600;
 }
 .primary-foot span { display: inline-flex; align-items: center; gap: 9px; }
-.primary-foot .fa-whatsapp { font-size: 17px; }
-.action-store { grid-column: 2 / 4; padding: 16px 20px; }
+.primary-foot .fa-whatsapp { font-size: 17px; transition: color .2s ease; }
+.action-primary:is(:hover, :focus-visible) .fa-whatsapp { color: #4ade80; }
+.action-store { grid-column: 2 / 4; padding: 15px 20px; }
 .action-store .action-number { color: var(--sun); }
 .secondary-copy { display: flex; flex-direction: column; gap: 3px; }
 .secondary-copy strong { font-family: var(--display); font-size: 28px; font-weight: 400; line-height: 1; }
-.secondary-copy small { color: var(--muted); font-size: 11px; }
-.action-arrow { position: absolute; right: 19px; bottom: 18px; color: var(--sea); font-size: 13px; }
+.secondary-copy small { padding-right: 62px; color: var(--muted); font-size: 11px; line-height: 1.45; }
+.action-arrow { position: absolute; right: 19px; bottom: 18px; display: flex; align-items: center; gap: 15px; color: var(--sea); font-size: 13px; }
+.map-icon { font-size: 21px; transition: color .2s ease; }
+.action-store:is(:hover, :focus-visible) .map-icon {
+  color: transparent;
+  background: conic-gradient(#4285f4 0 25%, #34a853 25% 48%, #fbbc05 48% 68%, #ea4335 68% 82%, #4285f4 82%);
+  background-clip: text;
+}
 .action-social { padding: 17px 18px; }
 .action-social .action-number { color: var(--muted); }
 .social-line { display: flex; align-items: center; gap: 10px; }
-.social-line > i:first-child { color: var(--sea); font-size: 18px; }
+.social-line > i:first-child { color: var(--sea); font-size: 18px; transition: color .2s ease, text-shadow .2s ease; }
 .social-line strong { font-size: 14px; font-weight: 600; }
 .social-line > i:last-child { margin-left: auto; color: var(--sea); font-size: 11px; }
+.action-instagram:is(:hover, :focus-visible) .social-line > i:first-child {
+  color: transparent;
+  background: linear-gradient(35deg, #feda75, #fa7e1e 25%, #d62976 58%, #962fbf 80%, #4f5bd5);
+  background-clip: text;
+}
+.action-tiktok:is(:hover, :focus-visible) .social-line > i:first-child {
+  color: #162224;
+  text-shadow: -2px -1px #25f4ee, 2px 1px #fe2c55;
+}
 
 .footer {
   display: flex;
@@ -282,13 +317,12 @@ button { font: inherit; }
   .hero-heading { display: block; margin-bottom: 18px; }
   .hero h1 { font-size: clamp(56px, 15vw, 72px); }
   .hero-intro { max-width: 350px; margin: 10px 0 0; font-size: 12px; }
-  .film { height: clamp(190px, 56vw, 260px); border-radius: 16px; }
-  .film-video { object-position: 50% 58%; }
-  .film-note { bottom: 12px; left: 12px; padding: 9px 11px; font-size: 10px; }
+  .film { height: clamp(230px, 69vw, 300px); border-radius: 16px; }
+  .film-note { display: none; }
   .destinations { padding-top: 23px; }
   .section-heading { margin-bottom: 13px; }
   .section-heading h2 { font-size: 30px; }
-  .actions { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 160px 100px 80px; gap: 10px; }
+  .actions { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 160px 128px 80px; gap: 10px; }
   .action-primary { grid-column: 1 / 3; grid-row: 1; padding: 17px 20px 15px; }
   .primary-copy strong { max-width: 260px; font-size: 32px; }
   .action-store { grid-column: 1 / 3; grid-row: 2; }
@@ -302,7 +336,7 @@ button { font: inherit; }
 
 @media (max-width: 360px) {
   .hero h1 { font-size: 52px; }
-  .film { height: 180px; }
+  .film { height: 230px; }
   .action-social { padding: 11px; }
   .social-line strong { font-size: 11px; }
 }

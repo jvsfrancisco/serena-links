@@ -29,17 +29,19 @@ document.querySelector('#app').innerHTML = `
         </div>
 
         <div class="film">
-          <video
-            class="film-video"
-            src="/videos/beach-pdv.mp4"
-            poster="/photos/beach.webp"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            aria-hidden="true"
-          ></video>
+          <div class="film-window">
+            <video
+              class="film-video"
+              src="/videos/beach-pdv.mp4"
+              poster="/photos/beach.webp"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-hidden="true"
+            ></video>
+          </div>
           <div class="film-shade" aria-hidden="true"></div>
           <span class="film-note">Um pedacinho do nosso verão <i class="fa-solid fa-sun" aria-hidden="true"></i></span>
         </div>
@@ -64,21 +66,21 @@ document.querySelector('#app').innerHTML = `
             </span>
           </a>
 
-          <a class="action action-store" href="https://share.google/tF9dgYj1NQwDSUoFP" target="_blank" rel="noopener noreferrer">
+          <a class="action action-store" href="https://www.google.com/maps?cid=16150482244425516102" target="_blank" rel="noopener noreferrer">
             <span class="action-number">02 / VENHA NOS VER</span>
             <span class="secondary-copy">
               <strong>Visite a loja.</strong>
-              <small>Experimente a Serena de perto, no Rio.</small>
+              <small>Rua Pôrto Alegre, 56 · Engenho Novo<br>Rio de Janeiro, RJ · 20715-260</small>
             </span>
-            <span class="action-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            <span class="action-arrow" aria-hidden="true"><i class="fa-brands fa-google map-icon"></i><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
           </a>
 
-          <a class="action action-social" href="https://www.instagram.com/serena_biquiniis/" target="_blank" rel="noopener noreferrer">
+          <a class="action action-social action-instagram" href="https://www.instagram.com/serena_biquiniis/" target="_blank" rel="noopener noreferrer">
             <span class="action-number">03 / INSPIRE-SE</span>
             <span class="social-line"><i class="fa-brands fa-instagram" aria-hidden="true"></i><strong>Instagram</strong><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
           </a>
 
-          <a class="action action-social" href="https://www.tiktok.com/@serenabiquiniis01" target="_blank" rel="noopener noreferrer">
+          <a class="action action-social action-tiktok" href="https://www.tiktok.com/@serenabiquiniis01" target="_blank" rel="noopener noreferrer">
             <span class="action-number">04 / ACOMPANHE</span>
             <span class="social-line"><i class="fa-brands fa-tiktok" aria-hidden="true"></i><strong>TikTok</strong><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
           </a>
