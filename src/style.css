@@ -178,7 +178,7 @@ h1 em {
 .photo-stage {
   position: relative;
   width: min(100%, 690px);
-  height: 390px;
+  height: 370px;
   margin-top: 42px;
   perspective: 1000px;
 }
@@ -231,8 +231,8 @@ h1 em {
   z-index: 2;
   top: 0;
   left: 0;
-  width: 55%;
-  height: 350px;
+  width: 47%;
+  height: 338px;
   transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) rotateZ(-1.7deg);
 }
 
@@ -246,10 +246,11 @@ h1 em {
 
 .photo-client {
   z-index: 3;
-  right: 10%;
+  right: auto;
   bottom: 0;
-  width: 29%;
-  height: 285px;
+  left: 49%;
+  width: 24%;
+  height: 282px;
   transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) rotateZ(3.4deg);
 }
 
@@ -258,15 +259,15 @@ h1 em {
 }
 
 .photo-client img {
-  object-position: 57% center;
+  object-position: 52% center;
 }
 
 .photo-store {
   z-index: 1;
-  top: 27px;
+  top: 30px;
   right: 0;
-  width: 27%;
-  height: 238px;
+  width: 24%;
+  height: 246px;
   transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) rotateZ(-5deg);
 }
 
@@ -320,30 +321,27 @@ h1 em {
 }
 
 .tape-two {
-  right: 13%;
-  bottom: 43px;
+  right: 4%;
+  bottom: 78px;
   transform: rotate(-7deg);
 }
 
 .hanging-tag {
   position: absolute;
   z-index: 6;
-  top: 12px;
-  right: 31%;
+  top: 4px;
+  right: auto;
+  left: 43.5%;
   display: flex;
   flex-direction: column;
   width: 76px;
-  height: 108px;
-  padding: 24px 10px 10px;
+  height: 92px;
+  padding: 25px 8px 10px;
   align-items: center;
   color: #252017;
   background: #d7b45e;
   border-radius: 3px 3px 18px 18px;
   box-shadow: 4px 7px 0 rgba(23, 21, 18, 0.12);
-  font-size: 0.56rem;
-  letter-spacing: 0.12em;
-  text-align: center;
-  text-transform: uppercase;
   transform-origin: 50% -15px;
   animation: tag-swing 4.8s ease-in-out infinite;
 }
@@ -370,14 +368,11 @@ h1 em {
   content: '';
 }
 
-.hanging-tag strong {
-  margin: 4px 0;
-  font-size: 1.05rem;
-}
-
-.hanging-tag small {
-  font-size: 0.46rem;
-  line-height: 1.25;
+.hanging-tag img {
+  display: block;
+  width: 58px;
+  height: auto;
+  opacity: 0.9;
 }
 
 @keyframes tag-swing {
@@ -392,59 +387,79 @@ h1 em {
 
 .links-side {
   align-self: center;
-  padding: 10px 0 10px clamp(36px, 5vw, 74px);
-  border-left: 1px solid var(--line);
+  padding: 30px;
+  background: var(--paper-light);
+  border: 1px solid rgba(23, 21, 18, 0.18);
+  border-radius: 24px;
+  box-shadow: 9px 12px 0 rgba(23, 21, 18, 0.1);
 }
 
-.links-intro {
-  max-width: 370px;
-  margin-bottom: 34px;
+.links-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
 }
 
-.section-number {
-  margin-bottom: 12px;
-  color: var(--gold);
+.sun-stamp {
+  display: grid;
+  flex: 0 0 48px;
+  height: 48px;
+  padding: 8px;
+  place-items: center;
+  background: #d7b45e;
+  border-radius: 50%;
+}
+
+.sun-stamp img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mini-label {
+  margin: 0 0 4px;
+  color: #76602a;
+  font-size: 0.61rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 h2 {
-  margin-bottom: 10px;
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-size: clamp(2.25rem, 3.3vw, 3.35rem);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.025em;
-}
-
-.links-intro p {
-  max-width: 335px;
+  max-width: 310px;
   margin-bottom: 0;
-  color: #625d54;
-  font-size: 0.83rem;
-  line-height: 1.55;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
 }
 
 .whatsapp-link {
   display: grid;
   grid-template-columns: 43px minmax(0, 1fr) 34px;
   align-items: center;
-  min-height: 88px;
-  padding: 10px 3px;
-  color: var(--ink);
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
-  transition: color 180ms ease, padding 180ms ease;
+  min-height: 84px;
+  padding: 14px;
+  color: #fff;
+  background: #1d9d5d;
+  border-radius: 16px;
+  box-shadow: 0 9px 20px rgba(29, 157, 93, 0.2);
+  transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .whatsapp-link:hover {
-  padding-right: 10px;
-  padding-left: 10px;
-  color: #087c41;
+  color: #fff;
+  background: #138b4f;
+  box-shadow: 0 12px 26px rgba(29, 157, 93, 0.26);
+  transform: translateY(-2px);
 }
 
 .whatsapp-symbol {
   display: grid;
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   place-items: center;
 }
 
@@ -464,16 +479,25 @@ h2 {
 }
 
 .whatsapp-link small {
-  color: #756f65;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.6rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .whatsapp-link strong {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-size: 1.65rem;
-  font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.whatsapp-link .arrow {
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.whatsapp-link:hover .arrow {
+  color: #138b4f;
+  background: #fff;
 }
 
 .link-list {
@@ -597,43 +621,6 @@ h2 {
   text-transform: uppercase;
 }
 
-.ticker {
-  width: 100%;
-  overflow: hidden;
-  color: #f7f1e4;
-  background: #191713;
-  border-top: 1px solid #191713;
-  border-bottom: 1px solid #191713;
-}
-
-.ticker-track {
-  display: flex;
-  width: max-content;
-  align-items: center;
-  gap: 28px;
-  min-height: 46px;
-  animation: ticker-move 24s linear infinite;
-}
-
-.ticker-track span {
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  white-space: nowrap;
-}
-
-.ticker-track i {
-  color: #d2aa4c;
-  font-size: 0.95rem;
-  font-style: normal;
-}
-
-@keyframes ticker-move {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 .toast {
   position: fixed;
   z-index: 20;
@@ -675,8 +662,6 @@ h2 {
 
   .links-side {
     order: 2;
-    padding: 0;
-    border-left: 0;
   }
 
   .photo-stage {
@@ -737,11 +722,7 @@ h2 {
   }
 
   h2 {
-    font-size: 2.35rem;
-  }
-
-  .links-intro p {
-    font-size: 0.77rem;
+    font-size: 1.15rem;
   }
 
   .whatsapp-link {
@@ -749,7 +730,7 @@ h2 {
   }
 
   .whatsapp-link strong {
-    font-size: 1.45rem;
+    font-size: 0.86rem;
   }
 
   .photo-stage {
@@ -767,19 +748,20 @@ h2 {
   }
 
   .photo-main {
-    width: 56%;
+    width: 44%;
     height: 282px;
   }
 
   .photo-client {
-    right: 9%;
-    width: 30%;
+    right: auto;
+    left: 47%;
+    width: 25%;
     height: 226px;
   }
 
   .photo-store {
     top: 22px;
-    width: 29%;
+    width: 25%;
     height: 192px;
   }
 
@@ -797,7 +779,8 @@ h2 {
   }
 
   .hanging-tag {
-    right: 30%;
+    right: auto;
+    left: 39.5%;
     width: 62px;
     height: 91px;
     padding-top: 21px;
@@ -815,8 +798,15 @@ h2 {
     margin-top: 22px;
   }
 
-  .ticker-track {
-    min-height: 42px;
+  .links-side {
+    padding: 20px 18px;
+    border-radius: 20px;
+    box-shadow: 6px 8px 0 rgba(23, 21, 18, 0.09);
+  }
+
+  .sun-stamp {
+    flex-basis: 42px;
+    height: 42px;
   }
 }
 

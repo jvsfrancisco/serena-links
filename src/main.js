@@ -59,7 +59,7 @@ document.querySelector('#app').innerHTML = `
           </a>
 
           <a class="photo-card photo-client tilt-card" data-tilt href="${links.clientes}" target="_blank" rel="noreferrer">
-            <img src="/photos/instagram-clientes.webp" alt="Cliente Serena usando biquíni rosa na praia" />
+            <img src="/photos/instagram-praia.webp" alt="Cliente Serena de biquíni em uma praia do Rio de Janeiro" />
             <span class="photo-caption"><small>02</small> Clientes Serena ${arrow}</span>
           </a>
 
@@ -71,18 +71,18 @@ document.querySelector('#app').innerHTML = `
           <span class="tape tape-one" aria-hidden="true"></span>
           <span class="tape tape-two" aria-hidden="true"></span>
           <div class="hanging-tag" aria-hidden="true">
-            <span>RIO</span>
-            <strong>☀</strong>
-            <small>VERÃO<br />O ANO TODO</small>
+            <img src="/photos/serena-symbol.png" alt="" />
           </div>
         </div>
       </section>
 
       <section class="links-side" aria-label="Links da Serena Biquínis">
-        <div class="links-intro">
-          <span class="section-number">/ LINKS</span>
-          <h2>Fale com a Serena</h2>
-          <p>Chama a gente para ver os modelos disponíveis e escolher o seu.</p>
+        <div class="links-heading">
+          <span class="sun-stamp" aria-hidden="true"><img src="/photos/serena-symbol.png" alt="" /></span>
+          <div>
+            <p class="mini-label">Fale com a gente</p>
+            <h2>Por onde você quer começar?</h2>
+          </div>
         </div>
 
         <a class="whatsapp-link" href="${links.whatsapp}" target="_blank" rel="noreferrer">
@@ -90,8 +90,8 @@ document.querySelector('#app').innerHTML = `
             <svg viewBox="0 0 24 24"><path d="M20.5 11.7a8.3 8.3 0 0 1-12.3 7.2L4 20l1.1-4a8.3 8.3 0 1 1 15.4-4.3Z"/><path d="M8.8 7.8c.2-.4.4-.4.7-.4h.5c.2 0 .3.1.4.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .7.6 1 1.4 1.8 2.4 2.4.3.2.5.2.7 0l.8-1c.2-.3.4-.3.7-.2l1.8.9c.3.1.4.3.4.5 0 .3-.1 1.5-.8 2.1-.7.7-1.7.9-2.8.6-1.1-.3-2.5-.9-4.1-2.3-1.3-1.2-2.2-2.6-2.5-3.7-.4-1-.1-2.3.4-2.8.4-.4.8-.5 1.3-.4Z"/></svg>
           </span>
           <span>
-            <small>Atendimento</small>
-            <strong>WhatsApp</strong>
+            <small>Atendimento pelo WhatsApp</small>
+            <strong>Quero ver os modelos</strong>
           </span>
           ${arrow}
         </a>
@@ -127,13 +127,6 @@ document.querySelector('#app').innerHTML = `
         </div>
       </section>
     </main>
-  </div>
-
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span>VERÃO O ANO TODO</span><i>☀</i><span>LOJA NO ENGENHO NOVO</span><i>☀</i><span>ENVIOS PARA TODO O BRASIL</span><i>☀</i>
-      <span>VERÃO O ANO TODO</span><i>☀</i><span>LOJA NO ENGENHO NOVO</span><i>☀</i><span>ENVIOS PARA TODO O BRASIL</span><i>☀</i>
-    </div>
   </div>
 
   <div class="toast" role="status" aria-live="polite">Link copiado</div>
