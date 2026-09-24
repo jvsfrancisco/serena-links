@@ -61,10 +61,10 @@ body::before {
 }
 
 body::after {
-  right: -20px;
+  right: -10px;
   bottom: 0;
-  width: min(820px, 56vw);
-  height: 330px;
+  width: min(940px, 64vw);
+  height: 390px;
   border-radius: 68% 0 0 0 / 54% 0 0 0;
   background:
     linear-gradient(90deg, var(--paper) 0%, rgba(241, 237, 227, 0.72) 18%, transparent 48%),
@@ -369,17 +369,18 @@ h1 span {
 }
 
 .tape-two {
-  right: 4%;
-  bottom: 78px;
-  transform: rotate(-7deg);
+  top: 5px;
+  right: -16px;
+  bottom: auto;
+  transform: rotate(38deg);
 }
 
 .hanging-tag {
   position: absolute;
-  z-index: 6;
-  top: 12px;
-  right: 14px;
-  left: auto;
+  z-index: 8;
+  top: -2px;
+  right: auto;
+  left: 53.5%;
   display: flex;
   flex-direction: column;
   width: 76px;
@@ -390,12 +391,19 @@ h1 span {
   background: #d7b45e;
   border-radius: 3px 3px 18px 18px;
   box-shadow: 4px 7px 0 rgba(23, 21, 18, 0.12);
-  transform: rotate(2deg);
-  transform-origin: 50% 50%;
+  transform-origin: 50% -15px;
+  animation: tag-swing 4.8s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .hanging-tag::before {
-  display: none;
+  position: absolute;
+  top: -26px;
+  left: 37px;
+  width: 1px;
+  height: 31px;
+  background: #6f6141;
+  content: '';
 }
 
 .hanging-tag::after {
@@ -504,14 +512,13 @@ h2 {
   width: 34px;
   height: 34px;
   place-items: center;
-  background: #fff;
-  border-radius: 50%;
+  background: transparent;
 }
 
 .whatsapp-symbol img {
   position: absolute;
-  width: 25px;
-  height: 25px;
+  width: 31px;
+  height: 31px;
   object-fit: contain;
   transition: opacity 180ms ease, transform 180ms ease;
 }
@@ -651,18 +658,50 @@ h2 {
   margin-top: auto;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 5px;
   min-height: 58px;
   border-top: 1px solid var(--line);
   color: #6f695f;
-  font-size: 0.62rem;
+  font-size: 0.54rem;
 }
 
 .site-footer img {
   display: block;
-  width: 66px;
+  width: 52px;
   height: auto;
   opacity: 0.86;
+}
+
+.footer-shell {
+  display: grid;
+  width: 23px;
+  height: 23px;
+  padding: 0;
+  place-items: center;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.34);
+  border: 1px solid rgba(23, 21, 18, 0.16);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.footer-shell:hover,
+.footer-shell:focus-visible {
+  background: rgba(255, 255, 255, 0.7);
+  transform: rotate(-14deg) translateY(-1px);
+}
+
+.footer-shell.is-waving {
+  animation: shell-wave 700ms ease;
+}
+
+@keyframes shell-wave {
+  0%, 100% { transform: rotate(0); }
+  35% { transform: rotate(-20deg) translateY(-2px); }
+  70% { transform: rotate(18deg) translateY(-1px); }
 }
 
 .toast {
@@ -738,8 +777,8 @@ h2 {
     right: -34vw;
     bottom: -10px;
     width: 128vw;
-    height: 175px;
-    opacity: 0.3;
+    height: 220px;
+    opacity: 0.38;
   }
 
   .site {
@@ -851,12 +890,16 @@ h2 {
   }
 
   .hanging-tag {
-    top: 10px;
-    right: 10px;
-    left: auto;
+    top: -2px;
+    right: auto;
+    left: 51%;
     width: 62px;
-    height: 91px;
+    height: 82px;
     padding-top: 21px;
+  }
+
+  .hanging-tag::before {
+    left: 30px;
   }
 
   .hanging-tag::after {

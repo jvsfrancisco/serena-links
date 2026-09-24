@@ -41,9 +41,6 @@ document.querySelector('#app').innerHTML = `
 
           <a class="photo-card photo-main tilt-card" data-tilt href="${links.novidades}" target="_blank" rel="noreferrer">
             <img src="/photos/instagram-novidades.webp" alt="Biquínis coloridos nas araras da loja Serena" />
-            <span class="hanging-tag" aria-hidden="true">
-              <img src="/photos/serena-symbol.png" alt="" />
-            </span>
             <span class="photo-caption"><small>01</small> Novidades na arara ${arrow}</span>
           </a>
 
@@ -54,11 +51,14 @@ document.querySelector('#app').innerHTML = `
 
           <a class="photo-card photo-store tilt-card" data-tilt href="${links.maps}" target="_blank" rel="noreferrer">
             <img src="/photos/instagram-loja.webp" alt="Fachada da loja Serena Biquínis no Engenho Novo" />
+            <span class="tape tape-two" aria-hidden="true"></span>
             <span class="photo-caption"><small>03</small> Nossa loja ${arrow}</span>
           </a>
 
           <span class="tape tape-one" aria-hidden="true"></span>
-          <span class="tape tape-two" aria-hidden="true"></span>
+          <span class="hanging-tag" aria-hidden="true">
+            <img src="/photos/serena-symbol.png" alt="" />
+          </span>
         </div>
       </section>
 
@@ -119,7 +119,8 @@ document.querySelector('#app').innerHTML = `
     </main>
 
     <footer class="site-footer">
-      <span>Desenvolvido pela</span>
+      <button class="footer-shell" type="button" aria-label="Descobrir o segredo da concha" title="Tem um segredo aqui">🐚</button>
+      <span>Feito com sol, sal &amp; código por</span>
       <img src="/icons/quazz.svg" alt="Quazz" />
     </footer>
   </div>
@@ -129,6 +130,16 @@ document.querySelector('#app').innerHTML = `
 
 const shareButton = document.querySelector('.share-button')
 const toast = document.querySelector('.toast')
+const footerShell = document.querySelector('.footer-shell')
+
+const showToast = (message) => {
+  toast.textContent = message
+  toast.classList.add('is-visible')
+  window.setTimeout(() => {
+    toast.classList.remove('is-visible')
+    window.setTimeout(() => { toast.textContent = 'Link copiado' }, 220)
+  }, 2200)
+}
 
 shareButton.addEventListener('click', async () => {
   const shareData = {
@@ -144,13 +155,18 @@ shareButton.addEventListener('click', async () => {
     }
 
     await navigator.clipboard.writeText(window.location.href)
-    toast.classList.add('is-visible')
-    window.setTimeout(() => toast.classList.remove('is-visible'), 2200)
+    showToast('Link copiado')
   } catch (error) {
     if (error?.name !== 'AbortError') {
       window.location.href = links.whatsapp
     }
   }
+})
+
+footerShell.addEventListener('click', () => {
+  footerShell.classList.remove('is-waving')
+  window.requestAnimationFrame(() => footerShell.classList.add('is-waving'))
+  showToast('psiu… dá pra ouvir o mar daqui 🌊')
 })
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
