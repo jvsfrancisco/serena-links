@@ -119,7 +119,7 @@ document.querySelector('#app').innerHTML = `
     </main>
 
     <footer class="site-footer">
-      <span>Feito com sol, sal &amp; código por</span>
+      <span>Feito com sol, areia &amp; código por</span>
       <button class="quazz-easter" type="button" aria-label="Descobrir o segredo da Quazz" title="Uma onda passa por aqui">
         <img src="/icons/quazz.svg" alt="Quazz" />
         <span class="quazz-wave" aria-hidden="true"></span>
