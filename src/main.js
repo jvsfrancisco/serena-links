@@ -12,21 +12,6 @@ const links = {
 
 const arrow = '<span class="arrow" aria-hidden="true">↗</span>'
 
-const instagramIcon = `
-  <span class="network-icon network-icon--instagram" aria-hidden="true">
-    <svg class="icon-neutral" viewBox="0 0 24 24">
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.4" cy="6.7" r="1" class="icon-dot" />
-    </svg>
-    <svg class="icon-brand" viewBox="0 0 24 24">
-      <defs><linearGradient id="instagram-gradient" x1="2" y1="22" x2="22" y2="2"><stop stop-color="#ffd600"/><stop offset=".38" stop-color="#ff0169"/><stop offset=".72" stop-color="#d300c5"/><stop offset="1" stop-color="#7638fa"/></linearGradient></defs>
-      <rect x="3" y="3" width="18" height="18" rx="5" stroke="url(#instagram-gradient)" />
-      <circle cx="12" cy="12" r="4" stroke="url(#instagram-gradient)" />
-      <circle cx="17.4" cy="6.7" r="1" fill="#d300c5" stroke="none" />
-    </svg>
-  </span>`
-
 document.querySelector('#app').innerHTML = `
   <div class="site">
     <header class="topbar">
@@ -48,7 +33,7 @@ document.querySelector('#app').innerHTML = `
       <section class="visual-side" aria-labelledby="page-title">
         <div class="intro">
           <p class="overline">Serena Biquínis · Rio de Janeiro</p>
-          <h1 id="page-title">Biquínis para brilhar em <em>qualquer verão.</em></h1>
+          <h1 id="page-title">Biquínis para brilhar em qualquer verão.</h1>
           <p class="bio-line">Modelos coloridos, loja no Engenho Novo e envios para todo o Brasil.</p>
         </div>
 
@@ -87,7 +72,8 @@ document.querySelector('#app').innerHTML = `
 
         <a class="whatsapp-link" href="${links.whatsapp}" target="_blank" rel="noreferrer">
           <span class="whatsapp-symbol" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M20.5 11.7a8.3 8.3 0 0 1-12.3 7.2L4 20l1.1-4a8.3 8.3 0 1 1 15.4-4.3Z"/><path d="M8.8 7.8c.2-.4.4-.4.7-.4h.5c.2 0 .3.1.4.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .7.6 1 1.4 1.8 2.4 2.4.3.2.5.2.7 0l.8-1c.2-.3.4-.3.7-.2l1.8.9c.3.1.4.3.4.5 0 .3-.1 1.5-.8 2.1-.7.7-1.7.9-2.8.6-1.1-.3-2.5-.9-4.1-2.3-1.3-1.2-2.2-2.6-2.5-3.7-.4-1-.1-2.3.4-2.8.4-.4.8-.5 1.3-.4Z"/></svg>
+            <img class="icon-neutral" src="/icons/whatsapp.svg" alt="" />
+            <img class="icon-brand" src="/icons/whatsapp-color.svg" alt="" />
           </span>
           <span>
             <small>Atendimento pelo WhatsApp</small>
@@ -99,22 +85,26 @@ document.querySelector('#app').innerHTML = `
         <nav class="link-list" aria-label="Outros links">
           <a class="link-row" data-network="google" href="${links.maps}" target="_blank" rel="noreferrer">
             <span class="network-icon network-icon--map" aria-hidden="true">
-              <svg class="icon-neutral" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              <svg class="icon-brand google-pin" viewBox="0 0 24 24"><path d="M12 2a8 8 0 0 0-8 8c0 5 8 11 8 11s8-6 8-11a8 8 0 0 0-8-8Z" fill="#4285f4" stroke="none"/><path d="M12 2a8 8 0 0 1 7.2 4.5L12 10Z" fill="#34a853" stroke="none"/><path d="m12 10 5.2 6.2A34 34 0 0 1 12 21Z" fill="#fbbc04" stroke="none"/><path d="M4.2 8.2 12 10l-4.8 6A11 11 0 0 1 4 10c0-.6.1-1.2.2-1.8Z" fill="#ea4335" stroke="none"/><circle cx="12" cy="10" r="2.6" fill="#fff" stroke="none"/></svg>
+              <img class="icon-neutral" src="/icons/google-maps.svg" alt="" />
+              <img class="icon-brand" src="/icons/google-maps-color.svg" alt="" />
             </span>
             <span><strong>Visite a loja</strong><small>Rua Pôrto Alegre, 56 · Engenho Novo</small></span>
             ${arrow}
           </a>
 
           <a class="link-row" data-network="instagram" href="${links.instagram}" target="_blank" rel="noreferrer">
-            ${instagramIcon}
+            <span class="network-icon" aria-hidden="true">
+              <img class="icon-neutral" src="/icons/instagram.svg" alt="" />
+              <img class="icon-brand" src="/icons/instagram-color.svg" alt="" />
+            </span>
             <span><strong>Instagram</strong><small>@serena_biquiniis</small></span>
             ${arrow}
           </a>
 
           <a class="link-row" data-network="tiktok" href="${links.tiktok}" target="_blank" rel="noreferrer">
             <span class="network-icon network-icon--tiktok" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M15 4v10.2a4.7 4.7 0 1 1-4-4.6v3.2a1.7 1.7 0 1 0 1 1.5V4h3Zm0 0c.4 2.6 2 4.1 4.5 4.5"/></svg>
+              <img class="icon-neutral" src="/icons/tiktok.svg" alt="" />
+              <img class="icon-brand" src="/icons/tiktok-color.svg" alt="" />
             </span>
             <span><strong>TikTok</strong><small>@serenabiquiniis01</small></span>
             ${arrow}
@@ -127,6 +117,11 @@ document.querySelector('#app').innerHTML = `
         </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <span>Desenvolvido pela</span>
+      <img src="/icons/quazz.svg" alt="Quazz" />
+    </footer>
   </div>
 
   <div class="toast" role="status" aria-live="polite">Link copiado</div>

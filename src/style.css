@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root {
   color: #171512;
@@ -19,6 +19,11 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -27,6 +32,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background: var(--paper);
+  -ms-overflow-style: none;
 }
 
 a {
@@ -122,7 +128,7 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 1.12fr) minmax(360px, 0.72fr);
   gap: clamp(65px, 8vw, 122px);
-  padding: 66px 0 90px;
+  padding: 54px 0 56px;
 }
 
 .visual-side {
@@ -155,16 +161,11 @@ p {
 h1 {
   max-width: 650px;
   margin-bottom: 17px;
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-size: clamp(3.8rem, 6.2vw, 6.8rem);
-  font-weight: 400;
-  line-height: 0.85;
-  letter-spacing: -0.045em;
-}
-
-h1 em {
-  color: var(--gold);
-  font-weight: 400;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: clamp(3.1rem, 5.2vw, 5.65rem);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.067em;
 }
 
 .bio-line {
@@ -457,19 +458,38 @@ h2 {
 }
 
 .whatsapp-symbol {
+  position: relative;
   display: grid;
   width: 34px;
   height: 34px;
   place-items: center;
+  border-radius: 50%;
+  transition: background 180ms ease;
 }
 
-.whatsapp-symbol svg {
-  width: 27px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.5;
+.whatsapp-symbol img {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.whatsapp-symbol .icon-brand {
+  opacity: 0;
+}
+
+.whatsapp-link:hover .whatsapp-symbol {
+  background: #fff;
+}
+
+.whatsapp-link:hover .whatsapp-symbol .icon-neutral {
+  opacity: 0;
+}
+
+.whatsapp-link:hover .whatsapp-symbol .icon-brand {
+  opacity: 1;
+  transform: scale(0.9);
 }
 
 .whatsapp-link > span:nth-child(2) {
@@ -553,17 +573,13 @@ h2 {
   color: #3d3832;
 }
 
-.network-icon svg {
+.network-icon img {
   position: absolute;
   inset: 0;
   width: 24px;
   height: 24px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.55;
-  transition: opacity 180ms ease, color 180ms ease, filter 180ms ease, transform 180ms ease;
+  object-fit: contain;
+  transition: opacity 180ms ease, transform 180ms ease;
 }
 
 .network-icon .icon-brand {
@@ -578,23 +594,8 @@ h2 {
   opacity: 1;
 }
 
-.link-row[data-network='google']:hover .google-pin {
+.link-row:hover .network-icon .icon-brand {
   transform: translateY(-1px);
-}
-
-.network-icon--tiktok svg {
-  stroke-width: 1.8;
-}
-
-.link-row[data-network='tiktok']:hover .network-icon--tiktok svg {
-  color: #111;
-  filter: drop-shadow(-1.6px 0 #25f4ee) drop-shadow(1.6px 0 #fe2c55);
-  transform: translateY(-1px);
-}
-
-.network-icon--instagram .icon-dot {
-  fill: currentColor;
-  stroke: none;
 }
 
 .shop-details {
@@ -619,6 +620,24 @@ h2 {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 58px;
+  border-top: 1px solid var(--line);
+  color: #6f695f;
+  font-size: 0.62rem;
+}
+
+.site-footer img {
+  display: block;
+  width: 66px;
+  height: auto;
+  opacity: 0.86;
 }
 
 .toast {
@@ -708,8 +727,8 @@ h2 {
 
   h1 {
     margin-bottom: 15px;
-    font-size: clamp(3.25rem, 16.2vw, 4.55rem);
-    line-height: 0.88;
+    font-size: clamp(2.65rem, 12.5vw, 3.75rem);
+    line-height: 0.94;
   }
 
   .bio-line {
@@ -808,11 +827,15 @@ h2 {
     flex-basis: 42px;
     height: 42px;
   }
+
+  .site-footer {
+    min-height: 54px;
+  }
 }
 
 @media (max-width: 370px) {
   h1 {
-    font-size: 3.1rem;
+    font-size: 2.55rem;
   }
 
   .link-row small {
