@@ -522,7 +522,7 @@ h2 {
   min-height: 84px;
   padding: 14px;
   color: #fff;
-  background: #1d9d5d;
+  background: #147a46;
   border-radius: 16px;
   box-shadow: 0 9px 20px rgba(29, 157, 93, 0.2);
   transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
@@ -559,7 +559,7 @@ h2 {
 }
 
 .whatsapp-link small {
-  color: rgba(255, 255, 255, 0.7);
+  color: #d9f5e7;
   font-size: 0.6rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -613,7 +613,7 @@ h2 {
 
 .link-row small {
   overflow: hidden;
-  color: #777065;
+  color: #6f685e;
   font-size: 0.66rem;
   text-overflow: ellipsis;
   white-space: nowrap;
