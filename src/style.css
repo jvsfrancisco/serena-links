@@ -206,7 +206,12 @@ h1 {
   letter-spacing: -0.062em;
 }
 
-h1 span {
+.headline-dark {
+  display: block;
+  line-height: 0.98;
+}
+
+.headline-accent {
   display: block;
   margin-top: 0.13em;
   color: var(--gold);

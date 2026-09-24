@@ -33,7 +33,7 @@ document.querySelector('#app').innerHTML = `
       <section class="visual-side" aria-labelledby="page-title">
         <div class="intro">
           <p class="overline">Serena Biquínis · Rio de Janeiro</p>
-          <h1 id="page-title">Biquínis para<br />brilhar em <span>qualquer verão.</span></h1>
+          <h1 id="page-title"><span class="headline-dark">Biquínis para<br />brilhar em</span><span class="headline-accent">qualquer verão.</span></h1>
           <p class="bio-line">Modelos coloridos, loja no Engenho Novo e envios para todo o Brasil.</p>
         </div>
 
