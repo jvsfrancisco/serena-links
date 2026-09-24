@@ -16,7 +16,7 @@ document.querySelector('#app').innerHTML = `
   <div class="site">
     <header class="topbar">
       <a class="brand" href="${links.instagram}" target="_blank" rel="noreferrer" aria-label="Serena Biquínis no Instagram">
-        <img src="/photos/serena.png" alt="Serena Biquínis" />
+        <img src="/photos/serena.webp" width="220" height="220" alt="Serena Biquínis" />
       </a>
 
       <div class="topbar-right">
@@ -40,31 +40,58 @@ document.querySelector('#app').innerHTML = `
         <div class="photo-stage" aria-label="Destaques da Serena">
 
           <a class="photo-card photo-main tilt-card" data-tilt href="${links.novidades}" target="_blank" rel="noreferrer">
-            <img src="/photos/instagram-novidades.webp" alt="Biquínis coloridos nas araras da loja Serena" />
+            <img
+              src="/photos/instagram-novidades.webp"
+              srcset="/photos/instagram-novidades-360.webp 360w, /photos/instagram-novidades.webp 680w"
+              sizes="(max-width: 760px) 44vw, 260px"
+              width="680"
+              height="1208"
+              fetchpriority="high"
+              decoding="async"
+              alt="Biquínis coloridos nas araras da loja Serena"
+            />
             <span class="photo-caption"><small>01</small> Novidades na arara ${arrow}</span>
           </a>
 
           <a class="photo-card photo-client tilt-card" data-tilt href="${links.clientes}" target="_blank" rel="noreferrer">
-            <img src="/photos/instagram-clientes.webp" alt="Cliente Serena de biquíni na praia" />
+            <img
+              src="/photos/instagram-clientes.webp"
+              srcset="/photos/instagram-clientes-360.webp 360w, /photos/instagram-clientes.webp 810w"
+              sizes="(max-width: 760px) 26vw, 190px"
+              width="810"
+              height="1080"
+              loading="lazy"
+              decoding="async"
+              alt="Cliente Serena de biquíni na praia"
+            />
             <span class="photo-caption"><small>02</small> Clientes Serena ${arrow}</span>
           </a>
 
           <a class="photo-card photo-store tilt-card" data-tilt href="${links.maps}" target="_blank" rel="noreferrer">
-            <img src="/photos/instagram-loja.webp" alt="Fachada da loja Serena Biquínis no Engenho Novo" />
+            <img
+              src="/photos/instagram-loja.webp"
+              srcset="/photos/instagram-loja-360.webp 360w, /photos/instagram-loja.webp 760w"
+              sizes="(max-width: 760px) 26vw, 190px"
+              width="760"
+              height="1351"
+              loading="lazy"
+              decoding="async"
+              alt="Fachada da loja Serena Biquínis no Engenho Novo"
+            />
             <span class="tape tape-two" aria-hidden="true"></span>
             <span class="photo-caption"><small>03</small> Nossa loja ${arrow}</span>
           </a>
 
           <span class="tape tape-one" aria-hidden="true"></span>
           <span class="hanging-tag" aria-hidden="true">
-            <img src="/photos/serena-symbol.png" alt="" />
+            <img src="/photos/serena-symbol.webp" width="140" height="86" alt="" />
           </span>
         </div>
       </section>
 
       <section class="links-side" aria-label="Links da Serena Biquínis">
         <div class="links-heading">
-          <span class="sun-stamp" aria-hidden="true"><img src="/photos/serena-symbol.png" alt="" /></span>
+          <span class="sun-stamp" aria-hidden="true"><img src="/photos/serena-symbol.webp" width="140" height="86" alt="" /></span>
           <div>
             <p class="mini-label">Fale com a gente</p>
             <h2>Por onde você quer começar?</h2>
