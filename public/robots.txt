@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://serena-biquinis.jvictor-franci.chatgpt.site/sitemap.xml
