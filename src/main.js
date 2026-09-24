@@ -38,7 +38,6 @@ document.querySelector('#app').innerHTML = `
         </div>
 
         <div class="photo-stage" aria-label="Destaques da Serena">
-          <div class="beach-atmosphere" aria-hidden="true"></div>
 
           <a class="photo-card photo-main tilt-card" data-tilt href="${links.novidades}" target="_blank" rel="noreferrer">
             <img src="/photos/instagram-novidades.webp" alt="Biquínis coloridos nas araras da loja Serena" />
