@@ -176,6 +176,17 @@ body::after {
   transition: color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
+.arrow svg {
+  width: 14px;
+  height: 14px;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .share-button:hover .arrow,
 .photo-card:hover .arrow,
 .link-row:hover .arrow {

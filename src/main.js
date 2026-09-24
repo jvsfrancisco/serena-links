@@ -10,7 +10,13 @@ const links = {
   clientes: 'https://www.instagram.com/stories/highlights/17902169966960264/',
 }
 
-const arrow = '<span class="arrow" aria-hidden="true">↗</span>'
+const arrow = `
+  <span class="arrow" aria-hidden="true">
+    <svg viewBox="0 0 16 16" focusable="false">
+      <path d="M5 11 11 5M6 5h5v5" />
+    </svg>
+  </span>
+`
 
 document.querySelector('#app').innerHTML = `
   <div class="site">
