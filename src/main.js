@@ -73,7 +73,7 @@ document.querySelector('#app').innerHTML = `
 
         <a class="whatsapp-link" href="${links.whatsapp}" target="_blank" rel="noreferrer">
           <span class="whatsapp-symbol" aria-hidden="true">
-            <img src="/icons/whatsapp-color.svg" alt="" />
+            <img src="/icons/whatsapp.svg" alt="" />
           </span>
           <span>
             <small>Atendimento pelo WhatsApp</small>
@@ -119,9 +119,11 @@ document.querySelector('#app').innerHTML = `
     </main>
 
     <footer class="site-footer">
-      <button class="footer-shell" type="button" aria-label="Descobrir o segredo da concha" title="Tem um segredo aqui">🐚</button>
       <span>Feito com sol, sal &amp; código por</span>
-      <img src="/icons/quazz.svg" alt="Quazz" />
+      <button class="quazz-easter" type="button" aria-label="Descobrir o segredo da Quazz" title="Uma onda passa por aqui">
+        <img src="/icons/quazz.svg" alt="Quazz" />
+        <span class="quazz-wave" aria-hidden="true"></span>
+      </button>
     </footer>
   </div>
 
@@ -130,7 +132,7 @@ document.querySelector('#app').innerHTML = `
 
 const shareButton = document.querySelector('.share-button')
 const toast = document.querySelector('.toast')
-const footerShell = document.querySelector('.footer-shell')
+const quazzEaster = document.querySelector('.quazz-easter')
 
 const showToast = (message) => {
   toast.textContent = message
@@ -163,10 +165,10 @@ shareButton.addEventListener('click', async () => {
   }
 })
 
-footerShell.addEventListener('click', () => {
-  footerShell.classList.remove('is-waving')
-  window.requestAnimationFrame(() => footerShell.classList.add('is-waving'))
-  showToast('psiu… dá pra ouvir o mar daqui 🌊')
+quazzEaster.addEventListener('click', () => {
+  quazzEaster.classList.remove('is-washed')
+  window.requestAnimationFrame(() => quazzEaster.classList.add('is-washed'))
+  window.setTimeout(() => quazzEaster.classList.remove('is-washed'), 1300)
 })
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
