@@ -41,6 +41,9 @@ document.querySelector('#app').innerHTML = `
 
           <a class="photo-card photo-main tilt-card" data-tilt href="${links.novidades}" target="_blank" rel="noreferrer">
             <img src="/photos/instagram-novidades.webp" alt="Biquínis coloridos nas araras da loja Serena" />
+            <span class="hanging-tag" aria-hidden="true">
+              <img src="/photos/serena-symbol.png" alt="" />
+            </span>
             <span class="photo-caption"><small>01</small> Novidades na arara ${arrow}</span>
           </a>
 
@@ -56,9 +59,6 @@ document.querySelector('#app').innerHTML = `
 
           <span class="tape tape-one" aria-hidden="true"></span>
           <span class="tape tape-two" aria-hidden="true"></span>
-          <div class="hanging-tag" aria-hidden="true">
-            <img src="/photos/serena-symbol.png" alt="" />
-          </div>
         </div>
       </section>
 
