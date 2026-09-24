@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,ital,wght@6..96,0,500;6..96,0,600;6..96,1,500&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root {
   color: #171512;
@@ -45,7 +45,37 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+body::before,
+body::after {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  content: '';
+}
+
+body::before {
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 104% 24%, rgba(80, 177, 181, 0.13) 0 12%, transparent 34%),
+    radial-gradient(ellipse at -4% 90%, rgba(203, 164, 91, 0.14) 0 14%, transparent 37%);
+}
+
+body::after {
+  right: -7vw;
+  bottom: -148px;
+  width: min(780px, 58vw);
+  height: 360px;
+  border-radius: 52% 0 0 0 / 58% 0 0 0;
+  background:
+    repeating-radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.38) 0 1px, transparent 1.5px 8px),
+    linear-gradient(145deg, rgba(93, 190, 191, 0.16), rgba(52, 142, 151, 0.06) 48%, transparent 72%);
+  filter: blur(0.2px);
+  transform: rotate(-4deg);
+}
+
 .site {
+  position: relative;
+  z-index: 1;
   width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
 }
@@ -161,11 +191,19 @@ p {
 h1 {
   max-width: 650px;
   margin-bottom: 17px;
-  font-family: 'DM Sans', Arial, sans-serif;
-  font-size: clamp(3.1rem, 5.2vw, 5.65rem);
+  font-family: 'Bodoni Moda', Didot, 'Times New Roman', serif;
+  font-size: clamp(3.45rem, 5.45vw, 5.95rem);
+  font-weight: 600;
+  line-height: 0.86;
+  letter-spacing: -0.065em;
+}
+
+h1 span {
+  display: block;
+  color: var(--gold);
+  font-style: italic;
   font-weight: 500;
-  line-height: 0.94;
-  letter-spacing: -0.067em;
+  letter-spacing: -0.08em;
 }
 
 .bio-line {
@@ -182,6 +220,25 @@ h1 {
   height: 370px;
   margin-top: 42px;
   perspective: 1000px;
+}
+
+.beach-atmosphere {
+  position: absolute;
+  z-index: 0;
+  right: -18px;
+  bottom: 18px;
+  left: 7%;
+  height: 165px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, var(--paper) 0%, transparent 18%, transparent 82%, var(--paper) 100%),
+    url('/photos/instagram-praia.webp') center 23% / 118% auto no-repeat;
+  border-radius: 48% 52% 34% 66% / 28% 38% 62% 72%;
+  filter: saturate(0.62) brightness(1.12);
+  opacity: 0.2;
+  transform: rotate(-2deg);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 24%, #000 72%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 24%, #000 72%, transparent);
 }
 
 .photo-card {
@@ -463,8 +520,8 @@ h2 {
   width: 34px;
   height: 34px;
   place-items: center;
+  background: #fff;
   border-radius: 50%;
-  transition: background 180ms ease;
 }
 
 .whatsapp-symbol img {
@@ -473,23 +530,6 @@ h2 {
   height: 25px;
   object-fit: contain;
   transition: opacity 180ms ease, transform 180ms ease;
-}
-
-.whatsapp-symbol .icon-brand {
-  opacity: 0;
-}
-
-.whatsapp-link:hover .whatsapp-symbol {
-  background: #fff;
-}
-
-.whatsapp-link:hover .whatsapp-symbol .icon-neutral {
-  opacity: 0;
-}
-
-.whatsapp-link:hover .whatsapp-symbol .icon-brand {
-  opacity: 1;
-  transform: scale(0.9);
 }
 
 .whatsapp-link > span:nth-child(2) {
@@ -660,6 +700,26 @@ h2 {
   transform: translate(-50%, 0);
 }
 
+@media (min-width: 931px) and (max-height: 1000px) {
+  .topbar {
+    height: 96px;
+    min-height: 96px;
+  }
+
+  .main-grid {
+    padding: 36px 0 20px;
+  }
+
+  .photo-stage {
+    height: 350px;
+    margin-top: 24px;
+  }
+
+  .site-footer {
+    min-height: 52px;
+  }
+}
+
 @media (max-width: 930px) {
   .site {
     width: min(680px, calc(100% - 32px));
@@ -727,8 +787,8 @@ h2 {
 
   h1 {
     margin-bottom: 15px;
-    font-size: clamp(2.65rem, 12.5vw, 3.75rem);
-    line-height: 0.94;
+    font-size: clamp(2.8rem, 13.5vw, 4rem);
+    line-height: 0.92;
   }
 
   .bio-line {
@@ -755,6 +815,13 @@ h2 {
   .photo-stage {
     height: 315px;
     margin-top: 4px;
+  }
+
+  .beach-atmosphere {
+    right: -12px;
+    bottom: 12px;
+    left: 12%;
+    height: 205px;
   }
 
   .photo-card {
@@ -835,7 +902,7 @@ h2 {
 
 @media (max-width: 370px) {
   h1 {
-    font-size: 2.55rem;
+    font-size: 2.7rem;
   }
 
   .link-row small {

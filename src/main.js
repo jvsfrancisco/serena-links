@@ -33,18 +33,20 @@ document.querySelector('#app').innerHTML = `
       <section class="visual-side" aria-labelledby="page-title">
         <div class="intro">
           <p class="overline">Serena Biquínis · Rio de Janeiro</p>
-          <h1 id="page-title">Biquínis para brilhar em qualquer verão.</h1>
+          <h1 id="page-title">Biquínis para<br />brilhar em <span>qualquer verão.</span></h1>
           <p class="bio-line">Modelos coloridos, loja no Engenho Novo e envios para todo o Brasil.</p>
         </div>
 
         <div class="photo-stage" aria-label="Destaques da Serena">
+          <div class="beach-atmosphere" aria-hidden="true"></div>
+
           <a class="photo-card photo-main tilt-card" data-tilt href="${links.novidades}" target="_blank" rel="noreferrer">
             <img src="/photos/instagram-novidades.webp" alt="Biquínis coloridos nas araras da loja Serena" />
             <span class="photo-caption"><small>01</small> Novidades na arara ${arrow}</span>
           </a>
 
           <a class="photo-card photo-client tilt-card" data-tilt href="${links.clientes}" target="_blank" rel="noreferrer">
-            <img src="/photos/instagram-praia.webp" alt="Cliente Serena de biquíni em uma praia do Rio de Janeiro" />
+            <img src="/photos/instagram-clientes.webp" alt="Cliente Serena de biquíni na praia" />
             <span class="photo-caption"><small>02</small> Clientes Serena ${arrow}</span>
           </a>
 
@@ -72,8 +74,7 @@ document.querySelector('#app').innerHTML = `
 
         <a class="whatsapp-link" href="${links.whatsapp}" target="_blank" rel="noreferrer">
           <span class="whatsapp-symbol" aria-hidden="true">
-            <img class="icon-neutral" src="/icons/whatsapp.svg" alt="" />
-            <img class="icon-brand" src="/icons/whatsapp-color.svg" alt="" />
+            <img src="/icons/whatsapp-color.svg" alt="" />
           </span>
           <span>
             <small>Atendimento pelo WhatsApp</small>
